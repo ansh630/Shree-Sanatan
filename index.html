@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Sanatan - Pooja Samagri Shop</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Lora & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Use Lora for headings and Inter for body text */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfaf6; /* A slightly off-white, warm background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .bg-primary { background-color: #FF9800; } /* A vibrant orange */
+        .bg-primary-dark { background-color: #F57C00; }
+        .text-primary { color: #FF9800; }
+        .text-secondary { color: #5D4037; } /* A darker, richer brown for text */
+        .border-primary { border-color: #FF9800; }
+
+        /* Slider styles */
+        .slider-container { position: relative; overflow: hidden; }
+        .slide { display: none; transition: opacity 0.8s ease-in-out; }
+        .slide.active { display: block; }
+        .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
+        .dot { cursor: pointer; height: 12px; width: 12px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; }
+        .dot.active, .dot:hover { background-color: #FF9800; }
+    </style>
+</head>
+<body class="text-secondary">
+
+    <!-- Header & Navigation -->
+    <header class="bg-primary fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#">
+                <img src="https://i.ibb.co/4ZnQQ0Ym/Picsart-24-06-14-05-54-00-418.png" alt="Shree Sanatan Logo" class="h-16">
+            </a>
+            <nav class="hidden lg:flex items-center space-x-8 text-lg">
+                <a href="#home" class="text-white hover:text-yellow-200 transition-colors duration-300">Home</a>
+                <a href="#products" class="text-white hover:text-yellow-200 transition-colors duration-300">Products</a>
+                <a href="#about" class="text-white hover:text-yellow-200 transition-colors duration-300">About Us</a>
+                <a href="#contact" class="text-white hover:text-yellow-200 transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                 <button class="text-white hover:text-yellow-200">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                 </button>
+                 <button class="lg:hidden text-white">
+                    <i id="mobile-menu-button" class="fa-solid fa-bars fa-lg"></i>
+                 </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-primary border-t border-primary-dark">
+            <a href="#home" class="block py-3 px-6 text-base text-white hover:bg-primary-dark">Home</a>
+            <a href="#products" class="block py-3 px-6 text-base text-white hover:bg-primary-dark">Products</a>
+            <a href="#about" class="block py-3 px-6 text-base text-white hover:bg-primary-dark">About Us</a>
+            <a href="#contact" class="block py-3 px-6 text-base text-white hover:bg-primary-dark">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+
+        <!-- Hero Section Slider -->
+        <section id="home" class="slider-container w-full h-[60vh] md:h-[80vh]">
+            <!-- Slide 1 -->
+            <div class="slide active h-full bg-cover bg-center" style="background-image: url('https://i.ibb.co/cSM5LK2v/red-and-yellow-background-with-mandala-decoration-vector.jpg');">
+                <div class="w-full h-full bg-black/40 flex items-center justify-center text-center">
+                    <div class="container mx-auto px-6">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Divine Collections for Every Ritual</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Find authentic pooja samagri, murtis, and more.</p>
+                        <a href="#products" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 transform hover:scale-105">Explore Products</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide h-full bg-cover bg-center" style="background-image: url('https://i.ibb.co/4ZCjPYdQ/HDTRPTBR710-i.jpg');">
+                 <div class="w-full h-full bg-black/40 flex items-center justify-center text-center">
+                    <div class="container mx-auto px-6">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Exquisite Handcrafted Brassware</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Beautiful diyas, utensils, and statues for your home.</p>
+                        <a href="#products" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 transform hover:scale-105">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide h-full bg-cover bg-center" style="background-image: url('https://i.ibb.co/FLZpR3s9/Snapinsta-app-434257411-436227328791802-294453672183799945-n-1080-1024x1024.jpg');">
+                 <div class="w-full h-full bg-black/40 flex items-center justify-center text-center">
+                    <div class="container mx-auto px-6">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Celebrate with Festive Decorations</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Everything you need for Diwali, Navratri, and other festivals.</p>
+                        <a href="#products" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 transform hover:scale-105">View Collection</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Dots -->
+            <div class="slider-dots"></div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary/20 text-primary rounded-full p-4 mb-3">
+                           <i class="fa-solid fa-certificate fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Authentic Products</h3>
+                        <p class="text-sm text-gray-600">Sourced for purity and tradition.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary/20 text-primary rounded-full p-4 mb-3">
+                           <i class="fa-solid fa-hand-sparkles fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Handcrafted Items</h3>
+                        <p class="text-sm text-gray-600">Unique pieces made by skilled artisans.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary/20 text-primary rounded-full p-4 mb-3">
+                           <i class="fa-solid fa-store fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">One-Stop Shop</h3>
+                        <p class="text-sm text-gray-600">All your pooja needs in one place.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="bg-primary/20 text-primary rounded-full p-4 mb-3">
+                           <i class="fa-solid fa-leaf fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Pure & Natural</h3>
+                        <p class="text-sm text-gray-600">Gangajal, herbs, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-secondary mb-12">Our Product Categories</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                    
+                    <!-- Product Category Card -->
+                    <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/jFR39p3/DSCF2236.jpg" alt="God Statues" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">God Statues</h3>
+                    </div>
+                    <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/k2fL8yWj/91-GRqjr5hu-L.jpg" alt="Pooja Samagri" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">Pooja Samagri</h3>
+                    </div>
+                    <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/8gWBwwBS/Brass-Puja-Thali-Set1.jpg" alt="Brass Utensils" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">Brass Utensils</h3>
+                    </div>
+                    <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/h1fHBxD9/unnamed.webp" alt="Diyas" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">Diyas</h3>
+                    </div>
+                    <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/MxgrkbVr/20240907-194136-Photoroom.jpg" alt="God Clothes" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">God Clothes</h3>
+                    </div>
+                    <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/xSpd5ngy/ramayan-c77a1f6e-9928-40f8-acf9-e3c14bbc0707.jpg" alt="Religious Books" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">Religious Books</h3>
+                    </div>
+                     <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/8L7XVrhq/2024-10-23.webp" alt="Gangajal" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">Gangajal</h3>
+                    </div>
+                     <div class="group text-center">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                             <img src="https://i.ibb.co/FLZpR3s9/Snapinsta-app-434257411-436227328791802-294453672183799945-n-1080-1024x1024.jpg" alt="Festive Decorations" class="w-full h-auto object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mt-4">Festive Decorations</h3>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="lg:flex items-center flex-row-reverse">
+                    <div class="lg:w-1/2">
+                         <img src="https://i.ibb.co/b5tFYnwL/Picsart-24-06-14-05-54-00-418.png" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x450/FFF8E1/795548?text=Image+Error';"
+                             alt="Interior of the Shree Sanatan shop" class="rounded-lg shadow-2xl mx-auto">
+                    </div>
+                    <div class="lg:w-1/2 lg:pr-16 mt-10 lg:mt-0">
+                        <h2 class="text-4xl font-bold text-secondary mb-4">Welcome to Shree Sanatan</h2>
+                        <p class="text-gray-600 mb-4 text-lg">
+                            Located in the heart of Akbarpur, Shree Sanatan is dedicated to providing authentic pooja materials to support your spiritual practices. We believe in preserving traditions and offering the highest quality products for your prayers and rituals.
+                        </p>
+                        <p class="text-gray-600 text-lg">
+                            From handcrafted god statues to pure gangajal and festive decorations, every item in our shop is selected with care and devotion. We are honored to be a part of your spiritual journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-primary/10">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">Visit Our Shop</h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        <a href="https://maps.app.goo.gl/Ssr4vurEPTqqZQu67" target="_blank" class="hover:text-primary underline transition-colors duration-300">
+                            Near St. Peter's School, Opposite B.N. Inter College, Andhi Nagar, Akbarpur, Uttar Pradesh.
+                        </a>
+                        <br>
+                        Come and explore our collection of divine products. For inquiries, please call us.
+                    </p>
+                    <a href="tel:+916307966815" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 transform hover:scale-105 text-lg">
+                        Call Us: +91 6307966815
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Shree Sanatan</h3>
+                    <p class="text-gray-400">Your trusted partner for authentic pooja samagri and spiritual items.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary">Home</a></li>
+                        <li><a href="#products" class="hover:text-primary">Products</a></li>
+                        <li><a href="#about" class="hover:text-primary">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="hover:text-primary">God Statues</a></li>
+                        <li><a href="#products" class="hover:text-primary">Pooja Samagri</a></li>
+                        <li><a href="#products" class="hover:text-primary">Brass Utensils</a></li>
+                        <li><a href="#products" class="hover:text-primary">Religious Books</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <p class="text-gray-400 mb-2">
+                        <i class="fa-solid fa-location-dot mr-2"></i>
+                        <a href="https://maps.app.goo.gl/Ssr4vurEPTqqZQu67" target="_blank" class="hover:text-primary transition-colors duration-300">
+                            Near St. Peter's School, Opposite B.N. Inter College, Andhi Nagar, Akbarpur, Uttar Pradesh
+                        </a>
+                    </p>
+                    <p class="text-gray-400 mb-2"><i class="fa-solid fa-phone mr-2"></i> +91 6307966815</p>
+                    <p class="text-gray-400"><i class="fa-solid fa-envelope mr-2"></i>shreesanatan2023@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Shree Sanatan. All Rights Reserved. Website by Anshuman Mishra.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // --- Hero Slider ---
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.querySelector('.slider-dots');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Create dots
+        if (slides.length > 0 && dotsContainer) {
+            slides.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    showSlide(i);
+                    resetInterval();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function showSlide(n) {
+                // Wrap around logic
+                if (n >= slides.length) { currentSlide = 0; }
+                else if (n < 0) { currentSlide = slides.length - 1; }
+                else { currentSlide = n; }
+
+                // Hide all slides and remove active class from dots
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                // Show current slide and set active dot
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            // Initialize slider
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+    </script>
+
+</body>
+</html>
